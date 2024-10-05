@@ -1,0 +1,337 @@
+:root{
+  --box-shadow:5px 5px 10px 10px rgba(101,175,10,0.5);
+  --bg-color:rgb(40,47,97);
+}
+body{
+  background-color: rgb(11,26,51);
+  color: aliceblue;
+}
+a{
+  text-decoration: none;
+  color: aliceblue;
+
+}
+/* navbar-section */
+.nav_bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.nav_bar .nav_items{
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+.nav_bar .nav_items:hover{
+  border-bottom: 3px solid rgb(231, 13, 13);
+}
+/* Home-section */
+.home{
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+.home .left {
+  background-color:var(--bg-color);
+  width: 620px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid red;
+  box-shadow: var(--box-shadow);
+}
+.home .right .img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: yellow; */
+}
+.home .right .img img{
+  height: 270px;
+  width: 270px;
+  border: 5px solid red;
+border-radius: 100%;
+animation-name: superman;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+@keyframes superman {
+  0%{
+border-color: blue;
+transform: translate(0,0px);
+box-shadow: 10px 10px 100px 50px blue;
+  }
+  25%{
+    border-color: rgb(249, 78, 11);
+    transform: translate(0,0px);
+    box-shadow: 10px 10px 100px 50px rgb(249,78,11);
+  }
+  50%{
+    border-color: rgb(199, 12, 12);
+    transform: translate(0,0px);
+    box-shadow: 10px 10px 100px 50px rgb(199,12,12);
+  }
+  75%{
+    border-color: rgb(130,217,160);
+    /* transform: translate(0,0px); */
+    box-shadow: 10px 10px 100px 50px rgb(130,217,160);
+  }
+  100%{
+    border-color: rgb(50,55,205);
+    transform: translate(0,-0px);
+    box-shadow: 10px 10px 100px 50px rgb(50,55,205);
+  }
+}
+/* skills */
+.skills{
+  width: 900px;
+margin-top: 30px;
+}
+.skills .items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-wrap: wrap;
+/* width: 700px; */
+margin: auto;
+
+
+}
+.skills .items .item{
+  background-color: black;
+width: calc(33.33%);
+text-align: center;
+padding: 20px;
+border-radius: 10px;
+border: 1px solid red;
+margin: 20px;
+box-shadow: var(--box-shadow);
+}
+.skills .items .item img{
+  width: 70px;
+
+
+}
+/* projects */
+.container project my-3 .h1{
+  color: aliceblue;
+}
+/* contact */
+.contact-icon{
+display: flex;
+height: 30vh;
+
+justify-content: center;
+align-items: center;
+
+}
+.contact-icon .items{
+  background-color: black;
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+  display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+border: 2px solid red;
+
+}
+.contact-icon .items:hover{
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+}
+.contact-icon .item .icon{
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* For tablets and smaller devices */
+@media screen and (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .home .left, .home .right .img {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .skills {
+    width: 100%;
+  }
+
+  .skills .items .item {
+    width: calc(50%);
+    padding: 15px;
+  }
+
+  .nav_bar .nav_items {
+    font-size: 1rem;
+  }
+}
+
+/* For phones */
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .home .left, .home .right .img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .skills .items .item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav_bar .nav_items {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .contact-icon {
+    flex-direction: column;
+    height: auto;
+  }
+  .contact-icon a{
+
+  }
+  .contact-icon .items {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Base Navbar Styles */
+.nav_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-color);
+  z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Navbar Links for Desktop */
+.right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_items {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.nav_items:hover {
+  border-bottom: 3px solid red;
+}
+
+/* Hamburger Icon - Hidden by default */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+/* Responsive Navbar for Tablets and Phones */
+@media screen and (max-width: 768px) {
+  /* Stack items vertically on smaller screens */
+  .right {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack items in a column */
+    position: absolute; /* Overlay menu over the page */
+    top: 60px; /* Adjust based on your navbar height */
+    right: 0;
+    width: 100%; /* Full width of the screen */
+    background-color: var(--bg-color); /* Same background as navbar */
+    z-index: 1001; /* Ensure it's above other content */
+  }
+
+  /* Show the menu when the hamburger icon is clicked */
+  .right.nav_open {
+    display: flex;
+  }
+
+  .nav_items {
+    padding: 15px;
+    border-bottom: 1px solid aliceblue;
+    text-align: center;
+  }
+
+  /* Hamburger icon */
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+  }
+
+  .home {
+    margin-top: 80px; /* Adjust this to avoid content overlapping with the navbar */
+  }
+}
+
+/* project */
+@media (max-width: 768px) {
+  .contact-icon .items a{
+    background-color: black;
+    margin: 10px;
+    height: 70px;
+    width: 70px;
+    
+  /* justify-content: center;
+  align-items: center;
+  border-radius: 100%; */
+  border: 2px solid red;
+  
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .card-body {
+    padding: 10px;
+  }
+}
+
+/* contact
